@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as InstructionsRouteImport } from './routes/instructions'
+import { Route as ExamRouteImport } from './routes/exam'
 import { Route as IndexRouteImport } from './routes/index'
 
 const RegisterRoute = RegisterRouteImport.update({
@@ -23,6 +24,11 @@ const InstructionsRoute = InstructionsRouteImport.update({
   path: '/instructions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExamRoute = ExamRouteImport.update({
+  id: '/exam',
+  path: '/exam',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/exam': typeof ExamRoute
   '/instructions': typeof InstructionsRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/exam': typeof ExamRoute
   '/instructions': typeof InstructionsRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/exam': typeof ExamRoute
   '/instructions': typeof InstructionsRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/instructions' | '/register'
+  fullPaths: '/' | '/exam' | '/instructions' | '/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/instructions' | '/register'
-  id: '__root__' | '/' | '/instructions' | '/register'
+  to: '/' | '/exam' | '/instructions' | '/register'
+  id: '__root__' | '/' | '/exam' | '/instructions' | '/register'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExamRoute: typeof ExamRoute
   InstructionsRoute: typeof InstructionsRoute
   RegisterRoute: typeof RegisterRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstructionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/exam': {
+      id: '/exam'
+      path: '/exam'
+      fullPath: '/exam'
+      preLoaderRoute: typeof ExamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExamRoute: ExamRoute,
   InstructionsRoute: InstructionsRoute,
   RegisterRoute: RegisterRoute,
 }
