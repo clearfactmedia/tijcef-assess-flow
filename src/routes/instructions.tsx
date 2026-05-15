@@ -18,7 +18,7 @@ export const Route = createFileRoute("/instructions")({
 });
 
 const RULES = [
-  "The assessment contains 25 multiple-choice questions across 6 modules.",
+  "The assessment contains 50 multiple-choice questions across 6 modules.",
   "Each question is timed at exactly 30 seconds. The timer auto-advances.",
   "You cannot return to a previous question.",
   "The exam will run in fullscreen. Leaving fullscreen or switching tabs is recorded.",
