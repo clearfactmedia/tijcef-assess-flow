@@ -14,13 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      questions: {
+        Row: {
+          correct_answer: string
+          created_at: string
+          id: string
+          module: string
+          option_a: string
+          option_b: string
+          option_c: string
+          option_d: string
+          question: string
+        }
+        Insert: {
+          correct_answer: string
+          created_at?: string
+          id?: string
+          module: string
+          option_a: string
+          option_b: string
+          option_c: string
+          option_d: string
+          question: string
+        }
+        Update: {
+          correct_answer?: string
+          created_at?: string
+          id?: string
+          module?: string
+          option_a?: string
+          option_b?: string
+          option_c?: string
+          option_d?: string
+          question?: string
+        }
+        Relationships: []
+      }
+      volunteers: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          email: string | null
+          exam_completed: boolean
+          fingerprint: string | null
+          full_name: string
+          id: string
+          ip_address: string | null
+          percentage: number | null
+          phone: string
+          registration_number: string
+          score: number | null
+          total_questions: number | null
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          email?: string | null
+          exam_completed?: boolean
+          fingerprint?: string | null
+          full_name: string
+          id?: string
+          ip_address?: string | null
+          percentage?: number | null
+          phone: string
+          registration_number: string
+          score?: number | null
+          total_questions?: number | null
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          email?: string | null
+          exam_completed?: boolean
+          fingerprint?: string | null
+          full_name?: string
+          id?: string
+          ip_address?: string | null
+          percentage?: number | null
+          phone?: string
+          registration_number?: string
+          score?: number | null
+          total_questions?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      next_registration_number: { Args: never; Returns: string }
     }
     Enums: {
       [_ in never]: never
