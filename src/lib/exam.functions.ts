@@ -3,7 +3,7 @@ import { getRequestIP } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
-const TOTAL_QUESTIONS = 25;
+const TOTAL_QUESTIONS = 50;
 const PASS_MARK = 50;
 
 function shuffle<T>(arr: T[]): T[] {

@@ -86,7 +86,7 @@ function Landing() {
                   TIJCEF/2026/<span className="text-gold">###</span>
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-                  <Stat label="Questions" value="25" />
+                  <Stat label="Questions" value="50" />
                   <Stat label="Per question" value="30s" />
                   <Stat label="Pass mark" value="50%" />
                   <Stat label="Modules" value="6" />
